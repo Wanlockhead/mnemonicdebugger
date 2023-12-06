@@ -1,0 +1,35 @@
+docs_dir: docs
+site_description: 
+  "The Mnemonic Debugger is a filing cabinet of our past encounters  
+  with obscure programming-related problems and where/how/if we found solutions. 
+  Mostly, it serves as a reminder of how to solve past problems if 
+  ever they come back to haunt us again!"
+site_name: The Mnemonic Debugger
+site_url: https://www.mnemonicdebugger.com
+repo_url: https://github.com/Wanlockhead/mnemonicdebugger
+copyright: "Copyright &copy; 2024"
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+plugins:
+  - blog:
+      blog_dir: blog
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.tabs
+    - navigation.footer
+    - toc.follow
+    - header.autohide
