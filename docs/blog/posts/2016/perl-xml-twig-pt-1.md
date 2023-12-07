@@ -1,6 +1,6 @@
 ---
 date: 2016-06-16
-categories:
+tags:
     - gcc
     - linux
     - python
@@ -12,7 +12,7 @@ categories:
 
 I wrote this tutorial for a colleague who is learning Perl and the XML::Twig module.  I wrote this to him in an email, so the tone of this post will be more that of an email.  I leave a lot out and simplify a lot of terms, but I think this will be handy to point to for the next person I need to teach XML::Twig to.
 
-The first thing to understand is that XML::Twig (you can find the detailed information on CPAN here http://search.cpan.org/dist/XML-Twig/Twig.pm) is a Perl module that lets you read and edit XML files much easier than you would if you were trying to look for beginning and end tags manually.  I don’t know if you have gotten to modules yet in your Perl studies, but Modules are basically Perl apps that other people have written and put on CPAN (a library of Perl modules) for public use.  In this case, someone wrote a Perl app that reads and writes XML, so you can just use their app by plugging it into your app as a module.  This way you don’t have to create an XML reader/writer yourself and you save countless hours!
+The first thing to understand is that XML::Twig (you can find the detailed information on CPAN here <http://search.cpan.org/dist/XML-Twig/Twig.pm>) is a Perl module that lets you read and edit XML files much easier than you would if you were trying to look for beginning and end tags manually.  I don’t know if you have gotten to modules yet in your Perl studies, but Modules are basically Perl apps that other people have written and put on CPAN (a library of Perl modules) for public use.  In this case, someone wrote a Perl app that reads and writes XML, so you can just use their app by plugging it into your app as a module.  This way you don’t have to create an XML reader/writer yourself and you save countless hours!
 So, it is not a separate language (although, there *is* a language called Twig, but that is completely different, so ignore it for now).  Your Perl code in your text editor will just import this module so you can use it in your code (more on this in a moment).
 I would recommend using the Module App::cpanminus to install all modules.  So, to install these modules open your terminal and type:
  
@@ -29,7 +29,7 @@ cpanm XML::Twig
 If that went well, we will now import XML::Twig into our Perl app:
  
 * Open your perl app in the text editor
-* at the top, after `use strict;` and `use warnings;` type: `use XML::Twig;` (for an example of this, look at line 9 of this file: https://github.com/byutrg/p5-Extract-TBX-Min/blob/master/lib/Extract/TBX/Min.pm)
+* at the top, after `use strict;` and `use warnings;` type: `use XML::Twig;` (for an example of this, look at line 9 of this file: <https://github.com/byutrg/p5-Extract-TBX-Min/blob/master/lib/Extract/TBX/Min.pm>)
 
 Now we have told our Perl app to use XML::Twig as a module, which gives us access to the subroutines provided by XML::Twig.  You can see a list of all of the possible subroutines at the XML::Twig CPAN page (the first link in this email).
 Ok. If everything went ok up to that point, we can now write a simple program.  I am attaching a TBX-Min file to this email for practice.  The first thing we do is create an instance of XML::Twig and define the rules we want our parser to follow.  We do this by writing the following code in the Perl app.  For this test app, we will simply look for the amount of times the element shows up and print it out.

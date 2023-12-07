@@ -1,6 +1,6 @@
 ---
 date: 2016-12-24
-categories:
+tags:
     - perl
     - xml
     - xml::twig

@@ -1,6 +1,6 @@
 ---
 date: 2020-10-07
-categories:
+tags:
     - web
     - JavaScript
 ---
@@ -11,6 +11,7 @@ Sometimes, if you are debugging in a legacy JS environment, you may not have jus
 
 Anyway, without further ado I present to you:
 
+```js
 function augment(withFn) {
     var name, fn;
     for (name in window) {
@@ -29,4 +30,6 @@ function augment(withFn) {
 augment(function(name, fn) {
     console.log("calling " + name);
 });
+```
+
 Just plop it in at the end of your JS file and give it a go! Every time a function is called it should print its name to the dev console.

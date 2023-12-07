@@ -1,6 +1,6 @@
 ---
 date: 2016-06-16
-categories:
+tags:
     - gcc
     - linux
     - python
@@ -10,15 +10,16 @@ categories:
 
 # Installing GCC w/o root
 
-I cannot tell you how many times I have been asked to install a Python application on a shared-host server which did not have GCC pre-installed!  Actually, I can: twice.  I failed the first time, gave up and used a different server, and went on to live a happy life—or so I thought.  But I did not give up the second time.
+I cannot tell you how many times I have been asked to install a Python application on a shared-host server which did not have GCC pre-installed!  Actually, I can: twice.  I failed the first time, gave up and used a different server, and went on to live a happy life — or so I thought.  But I did not give up the second time.
 
-Basically, I was installing a Python library which required pycrypto.  Everything was installing well with pip up to pycrypto until the `RuntimeError(“autoconf error“)` dampened my eager spirits.  This was the same issue I had run into in the past, but had long since suppressed the memory.  A quick Google search reminded me that the problem could be solved by simply running “sudo apt-get install gcc.”—which cannot be done without root privileges which I could have on the shared-host server I’m working with.
+Basically, I was installing a Python library which required pycrypto.  Everything was installing well with pip up to pycrypto until the `RuntimeError(“autoconf error“)` dampened my eager spirits.  This was the same issue I had run into in the past, but had long since suppressed the memory.  A quick Google search reminded me that the problem could be solved by simply running `sudo apt-get install gcc.` — which cannot be done without root privileges which I could have on the shared-host server I’m working with.
 
-Unlike my first encounter, I decided this time to dig in and find a way.  That is when I found a helpful root-free gcc install tutorial over at http://luiarthur.github.io/gccinstall.
+Unlike my first encounter, I decided this time to dig in and find a way.  That is when I found a helpful root-free gcc install tutorial over at <http://luiarthur.github.io/gccinstall>.
 
 A note on my installation experience:
 
 * I first tried GCC 5.4.0, but got:
+
 ```sh
 cannot stat `libgcc_s.so.1′: No such file or directory
 ```
@@ -27,7 +28,7 @@ cannot stat `libgcc_s.so.1′: No such file or directory
 
 Edit:
 
-When compiling Python or just installing via ‘pip’, add “env CC=/path/to/new/gcc” before your command:
+When compiling Python or just installing via ‘pip’, add `env CC=/path/to/new/gcc` before your command:
 
 ```sh
 ~$ env CC=/path/to/new/gcc pip install ...

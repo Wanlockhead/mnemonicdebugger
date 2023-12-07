@@ -1,7 +1,7 @@
 ---
 date: 2019-03-08
-categories:
-    - c#
+tags:
+    - csharp
     - puzzles
     - singlylinkedlist
 ---
@@ -12,7 +12,7 @@ I was asked a question about how to check for loops in a singly linked list (a l
 
 After some research I learned that this could be done easily and quickly using pointers and a hash table in C or C++. However, this is a more interesting question in C#, because accessing pointers is easier said than done with managed value types.
 
-Ultimately, the solution (posted on GitHub now: https://github.com/SerdoSchofield/SinglyLinkedListTest/tree/master) is to take advantage of the fact that C# passes Objects around as reference types, rather than copying their exact values all over the place. Using this, the solution becomes pretty simple:
+Ultimately, the solution (posted on GitHub now: <https://github.com/SerdoSchofield/SinglyLinkedListTest/tree/master>) is to take advantage of the fact that C# passes Objects around as reference types, rather than copying their exact values all over the place. Using this, the solution becomes pretty simple:
 
 1. Create a HashSet for your object class (A custom Node in my case).
 2. Make your way from object to object in your LinkedList, adding each object to the HashSet as you go (Remember: this is not copying their values everywhere, but instead only using references so it is not a memory hog)

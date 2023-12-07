@@ -17,6 +17,8 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
 plugins:
+  - tags
+  - search
   - blog:
       blog_dir: blog
 theme:
@@ -31,5 +33,6 @@ theme:
     - navigation.top
     - navigation.tabs
     - navigation.footer
+    - search.suggest
     - toc.follow
     - header.autohide
