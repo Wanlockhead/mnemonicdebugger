@@ -23,6 +23,8 @@ plugins:
       blog_dir: blog
 theme:
   name: material
+  logo: ../assets/images/md-logo.svg
+  favicon: ../assets/images/md-logo.svg
   features:
     - navigation.instant
     - navigation.instant.progress
